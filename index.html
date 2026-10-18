@@ -99,7 +99,7 @@
     }
     function actualizarDots() {
         for (let i = 0; i < 4; i++) {
-            const dot = document.getElementById(`dot${i}`);
+            const dot = document.getElementById("dot" + i);
             if (i < currentPin.length) { dot.classList.add('active'); } 
             else { dot.classList.remove('active'); }
         }
@@ -111,7 +111,7 @@
             const carta = document.getElementById("carta");
             bloqueo.style.opacity = "0";
             bloqueo.style.transform = "scale(0.95)";
-            setTimeout(() => {
+            setTimeout(function() {
                 bloqueo.style.display = "none";
                 carta.style.display = "block";
                 carta.offsetHeight; 
@@ -128,14 +128,14 @@
             const container = document.getElementById("mainContainer");
             container.style.transform = "translateX(8px)";
 Usa el código con precaución.
-setTimeout(() => container.style.transform = "translateX(-8px)", 40);
-setTimeout(() => container.style.transform = "translateX(4px)", 80);
-setTimeout(() => container.style.transform = "translateX(0)", 120);
+setTimeout(function() { container.style.transform = "translateX(-8px)"; }, 40);
+setTimeout(function() { container.style.transform = "translateX(4px)"; }, 80);
+setTimeout(function() { container.style.transform = "translateX(0)"; }, 120);
 }
 }
 function iniciarLluviaCorazones() {
 const iconos = ['❤️', '💖', '💕', '✨', '🌸'];
-setInterval(() => {
+setInterval(function() {
 const heart = document.createElement('div');
 heart.classList.add('heart-particle');
 heart.innerText = iconos[Math.floor(Math.random() * iconos.length)];
@@ -143,7 +143,7 @@ heart.style.left = Math.random() * 100 + "vw";
 heart.style.animationDuration = (Math.random() * 2.5 + 2) + "s";
 heart.style.fontSize = (Math.random() * 14 + 12) + "px";
 document.body.appendChild(heart);
-setTimeout(() => { heart.remove(); }, 4500);
+setTimeout(function() { heart.remove(); }, 4500);
 }, 350);
 }
 
