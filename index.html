@@ -4,25 +4,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Nicole ❤️</title>
+<title>Para Nicole ♡</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
-
 :root {
-  --gold: #e8c987;
-  --pink: #f3c8d5;
-  --bg: #09080d;
+  --pink: #ff789d;
+  --soft: #ffd9e4;
+  --gold: #f2d5a0;
+  --bg: #090914;
 }
-
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(ellipse at top, #30202c, #100d15 55%, #070609);
-  color: #fff4ed;
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #fff;
+  background: radial-gradient(ellipse at top, #29203d 0, #11111f 45%, #07070d 100%);
   overflow-x: hidden;
 }
 
@@ -31,25 +29,25 @@ body {
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 100%),
-    radial-gradient(1px 1px at 70% 20%, #ffe4b5 50%, transparent 100%),
-    radial-gradient(2px 2px at 80% 70%, #f3c8d5 50%, transparent 100%),
-    radial-gradient(1px 1px at 35% 80%, #fff 50%, transparent 100%),
-    radial-gradient(1px 1px at 55% 50%, #ffe4b5 50%, transparent 100%);
+    radial-gradient(2px 2px at 20% 30%, #fff9 50%, transparent 100%),
+    radial-gradient(1px 1px at 70% 20%, #fff9 50%, transparent 100%),
+    radial-gradient(2px 2px at 80% 70%, #ffb9d4bb 50%, transparent 100%),
+    radial-gradient(1px 1px at 35% 80%, #fff9 50%, transparent 100%),
+    radial-gradient(1px 1px at 55% 50%, #fff9 50%, transparent 100%);
   background-size: 240px 220px;
-  opacity: .5;
+  opacity: .65;
   animation: twinkle 5s ease-in-out infinite alternate;
 }
 
 @keyframes twinkle {
-  from { opacity: .25; }
-  to { opacity: .75; }
+  from { opacity: .3; }
+  to { opacity: .8; }
 }
 
 main {
   width: min(92%, 680px);
-  margin: auto;
-  padding: 35px 0 55px;
+  margin: 0 auto;
+  padding: 42px 0 60px;
   text-align: center;
   position: relative;
 }
@@ -57,10 +55,10 @@ main {
 .hidden { display: none !important; }
 
 .heart {
-  color: var(--pink);
   font-size: 46px;
+  color: var(--pink);
+  filter: drop-shadow(0 0 16px #ff789d88);
   animation: pulse 2s infinite;
-  text-shadow: 0 0 22px #f3c8d566;
 }
 
 @keyframes pulse {
@@ -68,156 +66,174 @@ main {
 }
 
 .eyebrow {
-  color: var(--gold);
-  font: 10px Arial, sans-serif;
-  letter-spacing: 4px;
+  color: #ffb7cc;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  margin-top: 14px;
+  font: 11px Arial, sans-serif;
+  margin-top: 10px;
 }
 
 h1 {
-  font: 400 clamp(38px, 9vw, 58px) 'Playfair Display', Georgia, serif;
-  color: #f8e4c1;
+  font-size: clamp(36px, 8vw, 56px);
+  font-weight: normal;
   margin: 14px 0;
-  text-shadow: 0 0 25px #e8c98722;
+  color: #ffe4ec;
+  text-shadow: 0 0 22px #ff789d33;
 }
 
 .intro {
-  color: #d8c9d3;
-  font: 14px/1.9 Arial, sans-serif;
-  max-width: 480px;
-  margin: 0 auto 25px;
+  color: #d8cedd;
+  line-height: 1.8;
+  font: 15px/1.8 Arial, sans-serif;
+  max-width: 500px;
+  margin: 0 auto 26px;
 }
 
 .card {
-  background: #ffffff08;
-  border: 1px solid #e8c98735;
+  background: #ffffff09;
+  border: 1px solid #ffc1d52b;
   border-radius: 22px;
-  padding: 25px 22px;
+  padding: 24px 21px;
   margin: 22px 0;
-  box-shadow: 0 15px 55px #0005;
+  box-shadow: 0 15px 55px #0004;
   backdrop-filter: blur(8px);
   text-align: left;
 }
 
 .card h2 {
-  color: var(--gold);
-  font: 400 27px 'Playfair Display', Georgia, serif;
+  color: #ffb7cc;
+  font-size: 25px;
+  font-weight: normal;
   text-align: center;
-  margin: 0 0 17px;
+  margin: 0 0 16px;
 }
 
+.letter {
+  font: 15px/1.95 Arial, sans-serif;
+  color: #f1e9f0;
+}
+
+.letter p { margin: 0 0 17px; }
+
 .button {
-  border: 1px solid #e8c987aa;
-  background: #e8c98712;
-  color: #f8e4c1;
+  border: 1px solid #ff9fbc;
+  background: #ff789d18;
+  color: #ffe5ed;
   border-radius: 30px;
-  padding: 13px 22px;
-  font: 13px Arial, sans-serif;
+  padding: 13px 20px;
+  font-size: 14px;
   cursor: pointer;
-  margin: 8px 4px;
-  transition: .25s;
+  margin: 8px 5px;
+  transition: .2s;
 }
 
 .button:hover {
-  background: #e8c98725;
+  background: #ff789d33;
   transform: translateY(-2px);
 }
 
 .song {
-  text-align: center;
-  color: #dfd0d9;
   font: 13px/1.8 Arial, sans-serif;
+  text-align: center;
+  color: #d9cede;
 }
 
 .video {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px solid #e8c98744;
+  aspect-ratio: 16/9;
+  border: 0;
   border-radius: 12px;
-  margin-top: 15px;
-}
-
-.small {
-  font: 11px/1.7 Arial, sans-serif;
-  color: #b8a9b6;
-  text-align: center;
-}
-
-.letter {
-  font: 15px/2 Arial, sans-serif;
-  color: #f0e7ec;
-}
-
-.letter p { margin: 0 0 18px; }
-
-.gold { color: var(--gold); }
-
-.end {
-  text-align: center;
-  color: var(--pink);
-  font: italic 23px/1.8 'Playfair Display', Georgia, serif;
+  margin-top: 12px;
 }
 
 .note {
-  font: 11px/1.8 Arial, sans-serif;
-  color: #a99aa9;
-  margin-top: 25px;
+  font: 12px/1.7 Arial, sans-serif;
+  color: #a99cad;
+  text-align: center;
+  margin-top: 26px;
 }
 
-#passwordScreen {
-  padding-top: 9vh;
+.end {
+  color: #ffb7cc;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.8;
 }
+
+.small {
+  font: 12px/1.7 Arial, sans-serif;
+  color: #c7b9ca;
+  text-align: center;
+}
+
+#passwordScreen { padding-top: 7vh; }
 
 .pin {
-  font: 27px Arial, sans-serif;
-  letter-spacing: 13px;
-  color: var(--gold);
-  min-height: 42px;
-  margin: 20px 0;
+  color: #ffd9e4;
+  font: 28px Arial, sans-serif;
+  letter-spacing: 10px;
+  margin: 22px 0;
+  min-height: 34px;
+  text-shadow: 0 0 12px #ff789d55;
 }
 
 .keypad {
   display: grid;
-  grid-template-columns: repeat(3, 66px);
-  gap: 11px;
+  grid-template-columns: repeat(3, 68px);
+  gap: 10px;
   justify-content: center;
-  margin: 20px auto;
+  margin: 22px auto;
 }
 
 .key {
-  width: 66px;
   height: 58px;
-  border-radius: 15px;
-  border: 1px solid #e8c98755;
-  color: #f8e4c1;
-  background: #ffffff08;
-  font: 19px Georgia, serif;
+  width: 68px;
+  color: #ffe5ed;
+  font: 20px Georgia, serif;
+  border: 1px solid #ff9fbc66;
+  background: #ff789d10;
+  border-radius: 16px;
   cursor: pointer;
+  transition: .2s;
 }
 
-.key:active { background: #e8c98730; }
+.key:hover {
+  background: #ff789d30;
+  border-color: #ff9fbc;
+}
 
 .error {
   color: #ff9eaf;
   font: 12px Arial, sans-serif;
-  min-height: 18px;
+  min-height: 17px;
+}
+
+.gold {
+  color: var(--gold);
+  text-shadow: 0 0 12px #f2d5a033;
 }
 
 .floating {
   position: fixed;
-  bottom: -30px;
-  color: #f3c8d5;
+  bottom: -35px;
+  z-index: 3;
   pointer-events: none;
+  color: #ff9fbc;
   animation: rise 8s linear forwards;
-  z-index: 2;
 }
 
 @keyframes rise {
   to {
-    transform: translateY(-110vh) rotate(35deg);
+    transform: translateY(-110vh) rotate(40deg);
     opacity: 0;
   }
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ffb7cc, transparent);
+  margin: 18px auto;
 }
 </style>
 </head>
@@ -228,11 +244,12 @@ h1 {
 <main>
   <section id="passwordScreen">
     <div class="heart">♡</div>
-    <div class="eyebrow">solo para tus ojos</div>
+    <div class="eyebrow">un pequeño mundo para ti</div>
     <h1>Para Nicole</h1>
+    <div class="divider"></div>
     <p class="intro">
-      He preparado un pequeño rincón para ti.<br>
-      Introduce nuestra clave para entrar.
+      He preparado algo especial para ti, mi amor.<br>
+      Introduce la contraseña para descubrirlo.
     </p>
 
     <div class="pin" id="pin">○ ○ ○ ○</div>
@@ -253,26 +270,25 @@ h1 {
     </div>
 
     <p class="error" id="error"></p>
-    <p class="small">Una pequeña sorpresa hecha con cariño.</p>
+    <p class="small">Hecho con cariño, solo para ti ❤️</p>
   </section>
 
   <section id="letterScreen" class="hidden">
     <div class="heart">♡</div>
-    <div class="eyebrow">para la persona que quiero</div>
+    <div class="eyebrow">para mi persona especial</div>
     <h1>Mi Nicole</h1>
     <p class="intro">
-      Antes de leer mis palabras, quiero que escuches
-      una canción que me hace pensar en ti.
+      Hay sentimientos que no caben en un simple mensaje.
+      Por eso quería hacerte algo que fuera solo nuestro.
     </p>
 
-    <!-- LA CANCIÓN VA ARRIBA DE LA CARTA -->
+    <!-- MÚSICA ARRIBA DE LA CARTA -->
     <section class="card" id="cancion">
-      <h2>Primero, escucha esto ♡</h2>
+      <h2>Una canción para ti ♡</h2>
       <div class="song">
         <span class="gold">Contigo — Los Panchos</span><br>
-        Dale al play y disfruta de este momento.
+        Escúchala mientras lees, mi amor.
       </div>
-
       <iframe
         id="videoCancion"
         class="video"
@@ -282,33 +298,29 @@ h1 {
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
-
       <p class="small">
-        Si no empieza sola, toca el botón de reproducción.
-        Puedes dejarla sonando mientras lees.
+        Si no empieza automáticamente, toca ▶️ para escucharla.
       </p>
     </section>
 
     <section class="card" id="carta">
-      <h2>Una carta para ti</h2>
+      <h2>Lo que siento por ti</h2>
       <div class="letter">
-        <p>Mi amor, quiero empezar dándote las gracias por haberme perdonado y por darme la oportunidad de seguir a tu lado. No sabes lo mucho que significa para mí tenerte en mi vida.</p>
+        <p>Mi amor, quiero empezar dándote las gracias por haberme perdonado y por darme otra oportunidad. De verdad significa muchísimo para mí poder seguir a tu lado.</p>
 
-        <p>Te amo muchísimo, Nicole. Puede que a veces no encuentre las palabras perfectas para explicarte todo lo que siento, pero quiero que sepas que lo mío contigo es de corazón. No quiero que mis palabras sean solo promesas bonitas; quiero demostrarte con mis acciones lo importante que eres para mí.</p>
+        <p>Te amo muchísimo, Nicole. Quiero que sepas que no quiero tomar tu perdón como si no hubiera pasado nada. Quiero aprender de mis errores, ser sincero contigo y demostrarte con hechos que valoro lo que tenemos.</p>
 
-        <p>Gracias por escucharme, por darme otra oportunidad y por seguir aquí. No quiero volver a fallarte de la misma manera. Quiero aprender de mis errores, ser sincero contigo y cuidar la confianza que estamos construyendo juntos.</p>
+        <p>Eres alguien muy especial para mí. Me encanta poder hablar contigo, compartir mis tonterías, reírme contigo y pensar en todos los momentos bonitos que todavía podemos vivir. A veces unas simples palabras tuyas consiguen alegrarme el día más de lo que imaginas.</p>
 
-        <p>Eres una persona muy especial para mí. Me haces ilusión, me sacas sonrisas y haces que quiera compartir contigo mis días, mis tonterías, mis pensamientos y hasta esos pequeños momentos que parecen no tener importancia, pero que se vuelven bonitos cuando los comparto contigo.</p>
+        <p>No quiero que lo nuestro se base solamente en decirnos cosas bonitas. Quiero que también exista confianza, respeto, sinceridad y ganas de entendernos cuando las cosas no salgan bien. No somos perfectos, pero podemos aprender a tratarnos mejor cada día.</p>
 
-        <p>No te prometo que todo vaya a ser perfecto, porque sé que ninguna relación lo es. Puede que tengamos días difíciles o que no pensemos igual en todo, pero quiero que podamos hablar, escucharnos y solucionar las cosas sin dejar de respetarnos. Quiero que nuestro amor también se note en la paciencia, la sinceridad y los pequeños detalles.</p>
+        <p>Quiero cuidar de ti, escucharte cuando necesites hablar y estar a tu lado sin hacerte sentir que tienes que esconder lo que sientes. Quiero que puedas ser tú misma conmigo, con tus días buenos y tus días malos, porque no tienes que ser perfecta para que seas importante para mí.</p>
 
-        <p>Quiero seguir conociéndote, descubrir más cosas de ti y crear recuerdos contigo. Quiero que te sientas querida, valorada y tranquila a mi lado. Y cuando cometa un error, quiero tener la madurez de reconocerlo y hacer las cosas mejor.</p>
+        <p>No sé qué nos traerá el futuro, pero ahora mismo quiero seguir construyendo esta historia contigo. Quiero que tengamos recuerdos que nos hagan sonreír, conversaciones que se nos hagan cortas y pequeños detalles que nos recuerden por qué decidimos estar juntos.</p>
 
-        <p>Cuando te digo que te amo, no quiero que sea una frase que se repite sin pensar. Quiero que sepas que lo digo porque de verdad siento algo muy bonito por ti. Eres mi niña, mi amor y una persona con la que deseo seguir compartiendo esta historia.</p>
+        <p>Gracias por darme otra oportunidad, mi princesa. Sé que las promesas por sí solas no bastan, por eso quiero que mis acciones acompañen a mis palabras. Quiero cuidar tu confianza y cuidar este amor que estamos compartiendo.</p>
 
-        <p>No sé todo lo que nos espera en el futuro, pero sí sé que ahora quiero estar contigo y cuidar lo que tenemos. Ojalá podamos seguir eligiéndonos, creciendo juntos y demostrando nuestro amor con hechos, no solamente con palabras.</p>
-
-        <p class="gold">Gracias por perdonarme, mi princesa. Gracias por darme esta oportunidad y por formar parte de mi vida. Te amo muchísimo, Nicole, y quiero cuidar este amor con todo mi corazón. ♡</p>
+        <p class="gold">Te amo muchísimo, Nicole. Gracias por estar en mi vida, por escucharme y por permitirme demostrarte que puedo hacerlo mejor. Eres mi amor y quiero que cada día que compartamos tenga algo bonito que recordar. ♡</p>
 
         <p>Con todo mi cariño,<br>
         <span class="gold">tu niño ❤️</span></p>
@@ -316,20 +328,20 @@ h1 {
     </section>
 
     <button class="button" onclick="toggleFinal()">
-      Tengo algo más que decirte ♡
+      Abrir una última sorpresita ♡
     </button>
 
     <section class="card hidden" id="final">
       <p class="end">
-        Te elijo hoy y quiero seguir eligiéndote mañana.<br>
-        Gracias por darme otra oportunidad.<br><br>
-        Te amo, mi Nicole. ♡
+        Si pudiera guardar un momento bonito,<br>
+        guardaría uno contigo.<br><br>
+        <span class="gold">Te amo, mi Nicole. ♡</span>
       </p>
     </section>
 
     <p class="note">
-      He hecho esta pequeña página pensando en ti.
-      Espero que te saque una sonrisa. ❤️
+      Esta página está hecha pensando en ti,
+      con cariño y con muchas ganas de verte sonreír. ❤️
     </p>
   </section>
 </main>
@@ -339,7 +351,9 @@ let enteredPin = '';
 
 function updatePin() {
   const dots = ['○', '○', '○', '○'];
-  for (let i = 0; i < enteredPin.length; i++) dots[i] = '●';
+  for (let i = 0; i < enteredPin.length; i++) {
+    dots[i] = '●';
+  }
   document.getElementById('pin').textContent = dots.join(' ');
 }
 
@@ -364,17 +378,16 @@ function checkPin() {
   if (enteredPin === '1110') {
     document.getElementById('passwordScreen').classList.add('hidden');
     document.getElementById('letterScreen').classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Se intenta iniciar la canción al entrar.
-    // Algunos navegadores requieren tocar el reproductor.
     const video = document.getElementById('videoCancion');
     video.src =
       'https://www.youtube-nocookie.com/embed/jhx3hYS__JI?autoplay=1';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     createHearts();
   } else {
     document.getElementById('error').textContent =
-      'Esa no es la clave, mi niña. Inténtalo otra vez ♡';
+      'Esa no es la contraseña, mi amor. Inténtalo otra vez ♡';
     enteredPin = '';
     updatePin();
   }
@@ -384,7 +397,12 @@ function toggleFinal() {
   document.getElementById('final').classList.toggle('hidden');
 }
 
+let heartsStarted = false;
+
 function createHearts() {
+  if (heartsStarted) return;
+  heartsStarted = true;
+
   setInterval(() => {
     if (document.getElementById('letterScreen').classList.contains('hidden')) return;
 
