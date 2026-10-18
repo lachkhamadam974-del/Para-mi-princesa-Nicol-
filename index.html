@@ -93,6 +93,7 @@
 
         #carta { display: none; }
         
+        /* Caja de texto fija con scroll interno suave para evitar que baile la pantalla del móvil */
         .carta-texto {
             font-size: 16px;
             line-height: 1.7;
@@ -103,7 +104,7 @@
             border-radius: 16px;
             border-left: 4px solid #d6336c;
             margin-top: 15px;
-            max-height: 340px;
+            max-height: 300px;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -117,26 +118,23 @@
 
         .error { color: #fa5252; font-weight: bold; margin-top: 15px; min-height: 20px; text-align: center; font-size: 14px; }
 
-        /* Botón de YouTube que no falla jamás */
-        .youtube-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #e62241;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            padding: 14px;
-            border-radius: 14px;
-            margin: 20px auto 10px auto;
-            max-width: 290px;
-            box-shadow: 0 5px 15px rgba(230, 34, 65, 0.3);
-            transition: transform 0.2s;
+        /* Contenedor del reproductor incrustado estilo ChatGPT */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin: 15px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-        .youtube-button:active {
-            transform: scale(0.95);
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         .heart-particle {
@@ -155,6 +153,7 @@
 <body>
 
 <div class="container" id="mainContainer">
+    <!-- TECLADO DE ACCESO -->
     <div id="bloqueo">
         <div class="corazon">🔒</div>
         <h1>Hola Nicole</h1>
@@ -184,15 +183,16 @@
         <div id="mensajeError" class="error"></div>
     </div>
 
+    <!-- PANTALLA DE LA CARTA -->
     <div id="carta">
         <div class="corazon">💖</div>
         <h1 style="margin-bottom: 2px;">Para: Nicole</h1>
         <div style="color: #d6336c; font-weight: bold; margin-bottom: 5px; text-align: center; font-size: 14px;">Eres el amor de mi vida</div>
         
-        <!-- Botón seguro que abre el tema "Sabor a mí" perfectamente en cualquier teléfono -->
-        <a href="https://youtube.com" target="_blank" class="youtube-button">
-            <span>🎵 Pulsar para escuchar nuestra música</span>
-        </a>
+        <!-- VIDEO INCRUSTADO INCORPORADO CORRECTAMENTE (Sabor a mí - Los Panchos) -->
+        <div class="video-container">
+            <iframe src="https://youtube.com" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
         <div class="carta-texto">
             Nicole, mi amor:<br><br>
