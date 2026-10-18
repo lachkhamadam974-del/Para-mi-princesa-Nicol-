@@ -93,7 +93,6 @@
 
         #carta { display: none; }
         
-        /* Corrección de scrolling: Caja interna con deslizamiento suave sin mover la pantalla externa */
         .carta-texto {
             font-size: 16px;
             line-height: 1.7;
@@ -104,7 +103,7 @@
             border-radius: 16px;
             border-left: 4px solid #d6336c;
             margin-top: 15px;
-            max-height: 320px;
+            max-height: 340px;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -118,23 +117,26 @@
 
         .error { color: #fa5252; font-weight: bold; margin-top: 15px; min-height: 20px; text-align: center; font-size: 14px; }
 
-        /* Contenedor del video de YouTube (Los Panchos - Sabor a mí) */
-        .video-box {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            margin-top: 15px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        /* Botón de YouTube que no falla jamás */
+        .youtube-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #e62241;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 14px;
+            border-radius: 14px;
+            margin: 20px auto 10px auto;
+            max-width: 290px;
+            box-shadow: 0 5px 15px rgba(230, 34, 65, 0.3);
+            transition: transform 0.2s;
         }
-        .video-box iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .youtube-button:active {
+            transform: scale(0.95);
         }
 
         .heart-particle {
@@ -185,12 +187,12 @@
     <div id="carta">
         <div class="corazon">💖</div>
         <h1 style="margin-bottom: 2px;">Para: Nicole</h1>
-        <div style="color: #d6336c; font-weight: bold; margin-bottom: 10px; text-align: center; font-size: 14px;">Eres el amor de mi vida</div>
+        <div style="color: #d6336c; font-weight: bold; margin-bottom: 5px; text-align: center; font-size: 14px;">Eres el amor de mi vida</div>
         
-        <!-- Video manual de YouTube: Los Panchos - Sabor a mí -->
-        <div class="video-box">
-            <iframe src="https://youtube.com" allow="encrypted-media" allowfullscreen></iframe>
-        </div>
+        <!-- Botón seguro que abre el tema "Sabor a mí" perfectamente en cualquier teléfono -->
+        <a href="https://youtube.com" target="_blank" class="youtube-button">
+            <span>🎵 Pulsar para escuchar nuestra música</span>
+        </a>
 
         <div class="carta-texto">
             Nicole, mi amor:<br><br>
