@@ -2,50 +2,56 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Para el amor de mi vida</title>
     <style>
         * { box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', 'Georgia', serif;
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
             background: linear-gradient(135deg, #ffeef2 0%, #ffd6e0 100%);
-            color: #4a2c34;
+            font-family: 'Poppins', 'Georgia', serif;
+        }
+
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
             padding: 20px;
-            overflow-x: hidden;
-            position: relative;
         }
+
         .container {
             background: rgba(255, 255, 255, 0.95);
-            padding: 40px 30px;
+            padding: 30px 20px;
             border-radius: 24px;
             box-shadow: 0 15px 35px rgba(224, 126, 150, 0.25);
-            max-width: 480px;
+            max-width: 450px;
             width: 100%;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             z-index: 10;
-            transition: all 0.5s ease;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
         }
-        h1 { color: #d6336c; font-size: 26px; margin-bottom: 10px; font-weight: 600; text-align: center; }
-        .subtitulo { font-size: 16px; color: #868e96; margin-bottom: 25px; text-align: center; }
+
+        h1 { color: #d6336c; font-size: 24px; margin-bottom: 5px; font-weight: 600; text-align: center; }
+        .subtitulo { font-size: 15px; color: #868e96; margin-bottom: 20px; text-align: center; }
         
         .pin-display {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 25px;
         }
         .dot {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             border: 2px solid #ffc9db;
-            transition: background-color 0.2s;
         }
         .dot.active {
             background-color: #d6336c;
@@ -55,65 +61,86 @@
         .keypad {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            max-width: 280px;
+            gap: 12px;
+            max-width: 260px;
             margin: 0 auto;
         }
         .key {
             background: #fff0f6;
             border: 2px solid #ffdeeb;
             color: #d6336c;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
-            height: 70px;
-            width: 70px;
+            height: 65px;
+            width: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             margin: 0 auto;
-            transition: all 0.2s ease;
             user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
         .key:active {
             background-color: #d6336c;
             color: white;
-            transform: scale(0.9);
         }
         .key.action {
-            font-size: 14px;
+            font-size: 13px;
             background: #f8f9fa;
             border-color: #e9ecef;
             color: #495057;
         }
 
-        #carta { display: none; opacity: 0; transition: opacity 0.8s ease; }
+        #carta { display: none; }
+        
         .carta-texto {
-            font-size: 17px;
-            line-height: 1.8;
+            font-size: 16px;
+            line-height: 1.7;
             text-align: justify;
             color: #4a2c34;
             background: #fff8f9;
-            padding: 25px;
+            padding: 20px;
             border-radius: 16px;
             border-left: 4px solid #d6336c;
-            margin-top: 20px;
+            margin-top: 15px;
+            max-height: 280px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
         
-        .corazon { font-size: 50px; color: #d6336c; animation: latido 1.2s infinite; margin-bottom: 15px; text-align: center; }
+        .corazon { font-size: 45px; color: #d6336c; animation: latido 1.2s infinite; margin-bottom: 10px; text-align: center; }
         @keyframes latido {
             0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
+            50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
 
-        .error { color: #fa5252; font-weight: bold; margin-top: 20px; min-height: 24px; text-align: center; }
+        .error { color: #fa5252; font-weight: bold; margin-top: 15px; min-height: 20px; text-align: center; font-size: 14px; }
+
+        /* Video de YouTube */
+        .video-box {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-top: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .video-box iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         .heart-particle {
             position: absolute;
             color: #d6336c;
-            font-size: 20px;
             pointer-events: none;
             z-index: 1;
             animation: fall linear forwards;
@@ -158,9 +185,14 @@
 
     <div id="carta">
         <div class="corazon">💖</div>
-        <h1 style="margin-bottom: 5px;">Para: Nicole</h1>
-        <div style="color: #d6336c; font-weight: bold; margin-bottom: 15px; text-align: center;">Eres el amor de mi vida</div>
+        <h1 style="margin-bottom: 2px;">Para: Nicole</h1>
+        <div style="color: #d6336c; font-weight: bold; margin-bottom: 10px; text-align: center; font-size: 14px;">Eres el amor de mi vida</div>
         
+        <!-- Reproductor de YouTube embebido (Soda Stereo - Trátame Suavemente) -->
+        <div class="video-box">
+            <iframe src="https://youtube.com" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+
         <div class="carta-texto">
             Nicole, mi amor:<br><br>
             Te escribo esto porque eres lo más importante que tengo. Primero que nada, quiero darte las gracias de todo corazón por haberme perdonado. Sé que no cualquiera tiene ese gran corazón, y tener una nueva oportunidad a tu lado significa el mundo entero para mí.<br><br>
@@ -171,8 +203,6 @@
     </div>
 </div>
 
-<audio id="musica" src="https://archive.org" loop preload="auto"></audio>
-
 <script>
     let currentPin = "";
     const correctPin = "1110";
@@ -182,16 +212,12 @@
         errorDiv.innerText = "";
 
         if (value === 'borrar') {
-            if (currentPin.length > 0) {
-                currentPin = currentPin.slice(0, -1);
-            }
+            if (currentPin.length > 0) { currentPin = currentPin.slice(0, -1); }
         } else if (value === 'validar') {
             verificarPassword();
             return;
         } else {
-            if (currentPin.length < 4) {
-                currentPin += value;
-            }
+            if (currentPin.length < 4) { currentPin += value; }
         }
         actualizarDots();
         
@@ -203,11 +229,8 @@
     function actualizarDots() {
         for (let i = 0; i < 4; i++) {
             const dot = document.getElementById(`dot${i}`);
-            if (i < currentPin.length) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
+            if (i < currentPin.length) { dot.classList.add('active'); } 
+            else { dot.classList.remove('active'); }
         }
     }
 
@@ -216,49 +239,27 @@
         
         if (currentPin === correctPin) {
             document.getElementById("bloqueo").style.display = "none";
-            const carta = document.getElementById("carta");
-            carta.style.display = "block";
-            setTimeout(() => { carta.style.opacity = "1"; }, 50);
-            
-            const audio = document.getElementById("musica");
-            audio.load();
-            
-            let playPromise = audio.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    console.log("Música iniciada.");
-                }).catch(error => {
-                    audio.muted = false;
-                    audio.play();
-                });
-            }
-            
+            document.getElementById("carta").style.display = "block";
             iniciarLluviaCorazones();
         } else {
             errorDiv.innerText = "Código incorrecto. Inténtalo de nuevo, mi amor.";
             currentPin = "";
             actualizarDots();
-            
-            const container = document.getElementById("mainContainer");
-            container.style.transform = "translateX(10px)";
-            setTimeout(() => container.style.transform = "translateX(-10px)", 50);
-            setTimeout(() => container.style.transform = "translateX(0)", 100);
         }
     }
 
     function iniciarLluviaCorazones() {
-        const iconos = ['❤️', '💖', '💕', '🌸', '✨'];
+        const iconos = ['❤️', '💖', '💕', '✨'];
         setInterval(() => {
             const heart = document.createElement('div');
             heart.classList.add('heart-particle');
             heart.innerText = iconos[Math.floor(Math.random() * iconos.length)];
             heart.style.left = Math.random() * 100 + "vw";
             heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            heart.style.fontSize = (Math.random() * 15 + 15) + "px";
+            heart.style.fontSize = (Math.random() * 12 + 12) + "px";
             document.body.appendChild(heart);
-            
-            setTimeout(() => { heart.remove(); }, 5000);
-        }, 300);
+            setTimeout(() => { heart.remove(); }, 4000);
+        }, 400);
     }
 </script>
 
