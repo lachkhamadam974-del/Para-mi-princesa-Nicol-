@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el amor de mi vida</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffeef2;
+            color: #4a2c34;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(224, 126, 150, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 { color: #d6336c; font-size: 28px; margin-bottom: 20px; }
+        p { font-size: 18px; line-height: 1.8; text-align: left; }
+        .centrado { text-align: center; }
+        input {
+            padding: 12px;
+            font-size: 18px;
+            width: 80%;
+            border: 2px solid #ffc9db;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        button {
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #c2255c; }
+        #carta { display: none; }
+        .error { color: #fa5252; font-weight: bold; margin-top: 10px; }
+        .corazon { font-size: 40px; color: #d6336c; animation: latido 1.2s infinite; }
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- SECCIÓN DE CONTRASEÑA -->
+    <div id="bloqueo">
+        <div class="corazon">❤️</div>
+        <h1>Hola Nicole</h1>
+        <p class="centrado">Introduce nuestra contraseña para descubrir lo que hay aquí dentro...</p>
+        <input type="password" id="inputPassword" placeholder="Contraseña de 4 dígitos">
+        <br>
+        <button onclick="verificarPassword()">Abrir carta</button>
+        <div id="mensajeError" class="error"></div>
+    </div>
+
+    <!-- SECCIÓN DE LA CARTA (SE MUESTRA AL PONER LA CONTRASEÑA) -->
+    <div id="carta">
+        <div class="corazon">💖</div>
+        <h1 class="centrado">Para: Nicole</h1>
+        <p>
+            Nicole, mi amor:<br><br>
+            Te escribo esto porque eres lo más importante que tengo. Primero que nada, quiero darte las gracias de todo corazón por haberme perdonado. Sé que no cualquiera tiene ese gran corazón, y tener una nueva oportunidad a tu lado significa el mundo entero para mí.<br><br>
+            Quiero que sepas que te amo muchísimo, con todas mis fuerzas, y estoy completamente seguro de que nunca nos separaremos. Eres, sin ninguna duda, el amor de mi vida.<br><br>
+            Gracias por absolutamente todo lo que haces por mí y por nosotros. Gracias por tu esfuerzo diario, porque sé que le echas muchas ganas a todo y quiero que sepas que yo lo veo y lo valoro muchísimo. Eres la mejor novia del mundo, una mujer increíble, y solo quiero hacerte muy feliz.<br><br>
+            Te amo hoy y para siempre.
+        </p>
+        
+        <!-- ELEMENTO DE AUDIO (Cambia el src por tu canción si lo deseas) -->
+        <audio id="musica" src="https://soundhelix.com" loop></audio>
+    </div>
+</div>
+
+<script>
+    function verificarPassword() {
+        const passwordCorrecta = "1110";
+        const passwordIngresada = document.getElementById("inputPassword").value;
+        const mensajeError = document.getElementById("mensajeError");
+        
+        if (passwordIngresada === passwordCorrecta) {
+            // Oculta la pantalla de bloqueo y muestra la carta
+            document.getElementById("bloqueo").style.display = "none";
+            document.getElementById("carta").style.display = "block";
+            
+            // Inicia la música en el mismo instante
+            const audio = document.getElementById("musica");
+            audio.play().catch(error => {
+                console.log("El navegador requería una interacción, pero al pulsar el botón ya debería sonar perfectamente.");
+            });
+        } else {
+            mensajeError.innerText = "Contraseña incorrecta. Inténtalo de nuevo, mi amor.";
+        }
+    }
+</script>
+
+</body>
+</html>
