@@ -12,9 +12,9 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow-x: hidden;
             background: linear-gradient(135deg, #ffeef2 0%, #ffd6e0 100%);
             font-family: 'Poppins', 'Georgia', serif;
+            overflow-x: hidden;
         }
 
         body {
@@ -34,8 +34,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             z-index: 10;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
         }
 
         h1 { color: #d6336c; font-size: 24px; margin-bottom: 5px; font-weight: 600; text-align: center; }
@@ -95,6 +93,7 @@
 
         #carta { display: none; }
         
+        /* Corrección de scrolling: Caja interna con deslizamiento suave sin mover la pantalla externa */
         .carta-texto {
             font-size: 16px;
             line-height: 1.7;
@@ -105,7 +104,7 @@
             border-radius: 16px;
             border-left: 4px solid #d6336c;
             margin-top: 15px;
-            max-height: 280px;
+            max-height: 320px;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -119,7 +118,7 @@
 
         .error { color: #fa5252; font-weight: bold; margin-top: 15px; min-height: 20px; text-align: center; font-size: 14px; }
 
-        /* Video de YouTube */
+        /* Contenedor del video de YouTube (Los Panchos - Sabor a mí) */
         .video-box {
             position: relative;
             width: 100%;
@@ -188,9 +187,9 @@
         <h1 style="margin-bottom: 2px;">Para: Nicole</h1>
         <div style="color: #d6336c; font-weight: bold; margin-bottom: 10px; text-align: center; font-size: 14px;">Eres el amor de mi vida</div>
         
-        <!-- Reproductor de YouTube embebido (Soda Stereo - Trátame Suavemente) -->
+        <!-- Video manual de YouTube: Los Panchos - Sabor a mí -->
         <div class="video-box">
-            <iframe src="https://youtube.com" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://youtube.com" allow="encrypted-media" allowfullscreen></iframe>
         </div>
 
         <div class="carta-texto">
