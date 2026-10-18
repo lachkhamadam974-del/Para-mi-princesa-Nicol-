@@ -7,9 +7,11 @@
 <meta name="theme-color" content="#10070d">
 <title>Para Nicole ♡</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<style>
 :root {
   --gold: #e6c58b;
   --cream: #fff5e8;
@@ -17,7 +19,11 @@
   --dark: #10070d;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   min-height: 100vh;
@@ -62,23 +68,28 @@ main {
 .eyebrow {
   color: var(--gold);
   font-size: 10px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 24px;
+  line-height: 1.8;
 }
 
 .lock-card {
   text-align: center;
   padding: 45px 25px;
   border: 1px solid rgba(230,197,139,.35);
-  border-radius: 3px;
-  background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012));
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.055),
+    rgba(255,255,255,.012)
+  );
   box-shadow: 0 25px 100px rgba(0,0,0,.35);
   position: relative;
 }
 
-.lock-card::before, .lock-card::after {
+.lock-card::before,
+.lock-card::after {
   content: "✦";
   position: absolute;
   color: var(--gold);
@@ -98,7 +109,7 @@ main {
 h1 {
   font-family: 'Great Vibes', cursive;
   color: var(--gold);
-  font-size: clamp(48px, 12vw, 76px);
+  font-size: clamp(52px, 12vw, 78px);
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 15px;
@@ -107,7 +118,7 @@ h1 {
 .subtitle {
   color: #e8d6dc;
   font-size: 12px;
-  line-height: 1.9;
+  line-height: 2;
   font-weight: 300;
 }
 
@@ -168,13 +179,17 @@ h1 {
   margin-top: 24px;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  color: rgba(255,245,232,.52);
+  color: rgba(255,245,232,.6);
   font-size: 16px;
+  line-height: 1.6;
 }
 
 .letter {
   border: 1px solid rgba(230,197,139,.42);
-  background: linear-gradient(rgba(35,13,25,.96), rgba(22,8,16,.98));
+  background: linear-gradient(
+    rgba(35,13,25,.97),
+    rgba(22,8,16,.99)
+  );
   box-shadow: 0 25px 100px rgba(0,0,0,.4);
   padding: clamp(24px, 6vw, 55px);
   position: relative;
@@ -201,10 +216,11 @@ h1 {
 
 .letter-top .tiny {
   font-size: 9px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 12px;
+  line-height: 1.8;
 }
 
 .letter-top h2 {
@@ -233,7 +249,7 @@ h1 {
 
 .letter-body p { margin-bottom: 21px; }
 
-.letter-body .highlight {
+.highlight {
   color: var(--gold);
   font-style: italic;
 }
@@ -255,20 +271,88 @@ h1 {
 
 .music-section {
   text-align: center;
-  margin-top: 30px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(230,197,139,.2);
+  margin-top: 35px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(230,197,139,.25);
+  position: relative;
+  z-index: 1;
 }
 
-.music-section p {
+.music-label {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.music-title {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: 43px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.music-description {
   color: #d7b8c4;
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px;
-  margin-bottom: 14px;
+  line-height: 1.7;
+  margin-bottom: 23px;
 }
 
-.music-button, .replay-button {
+.music-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
   border: 1px solid var(--gold);
+  background: linear-gradient(
+    135deg,
+    rgba(230,197,139,.16),
+    rgba(230,197,139,.04)
+  );
+  color: var(--gold);
+  padding: 15px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.music-button:hover {
+  background: rgba(230,197,139,.2);
+  box-shadow: 0 0 25px rgba(230,197,139,.12);
+  transform: translateY(-2px);
+}
+
+.music-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: rgba(255,245,232,.6);
+  font-size: 16px;
+  margin-top: 22px;
+}
+
+.footer {
+  text-align: center;
+  color: rgba(255,245,232,.45);
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 25px;
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+.replay-area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.replay-button {
+  border: 1px solid rgba(230,197,139,.45);
   background: transparent;
   color: var(--gold);
   padding: 12px 20px;
@@ -277,33 +361,6 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: .25s;
-}
-
-.music-button:hover, .replay-button:hover {
-  background: rgba(230,197,139,.12);
-}
-
-.youtube-wrap {
-  margin: 18px auto 0;
-  max-width: 420px;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
-.youtube-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba(230,197,139,.25);
-}
-
-.footer {
-  text-align: center;
-  color: rgba(255,245,232,.4);
-  font-size: 9px;
-  letter-spacing: 3px;
-  margin-top: 25px;
-  text-transform: uppercase;
 }
 
 .floating-heart {
@@ -319,7 +376,10 @@ h1 {
   0% { transform: translateY(0) rotate(0deg); opacity: 0; }
   12% { opacity: .75; }
   85% { opacity: .6; }
-  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+  100% {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
 }
 
 @keyframes appear {
@@ -332,7 +392,8 @@ h1 {
   .keypad { grid-template-columns: repeat(3, 54px); }
   .key { height: 46px; }
   .letter { padding: 24px 20px; }
-  .eyebrow { letter-spacing: 3px; }
+  .eyebrow { letter-spacing: 2px; }
+  .music-button { padding: 14px 15px; }
 }
 </style>
 </head>
@@ -348,6 +409,7 @@ h1 {
     <div class="lock-card">
       <div class="moon">☾</div>
       <h1>Para Nicole</h1>
+
       <p class="subtitle">
         Hay cosas que las palabras no pueden explicar,<br>
         pero aun así quiero intentar decirte lo que siento.
@@ -376,16 +438,20 @@ h1 {
       </div>
 
       <p id="message" class="message"></p>
-      <p class="small-note">Solo tú puedes abrir esta pequeña parte de mi corazón.</p>
+
+      <p class="small-note">
+        Solo tú puedes abrir esta pequeña parte de mi corazón.
+      </p>
     </div>
   </section>
 
   <section id="letterScreen" class="screen hidden">
     <article class="letter">
+
       <header class="letter-top">
-        <p class="tiny">Para la persona que quiero</p>
+        <p class="tiny">Una carta escrita para ti</p>
         <h2>Mi querida Nicole</h2>
-        <p>Una carta hecha con todo mi corazón ♡</p>
+        <p>De mi corazón al tuyo ♡</p>
       </header>
 
       <div class="letter-body">
@@ -419,8 +485,8 @@ h1 {
           Si algún día tenemos un problema, quiero que intentemos
           solucionarlo hablando y no dejando que el orgullo decida por
           nosotros. Quiero que podamos decirnos lo que sentimos, incluso
-          cuando sea difícil, porque tu tranquilidad y la confianza
-          entre nosotros también son importantes para mí.
+          cuando sea difícil, porque la confianza entre nosotros también
+          es importante para mí.
         </p>
 
         <p>
@@ -462,9 +528,21 @@ h1 {
         <div class="heart-divider">♡ ✦ ♡</div>
 
         <p>
-          Siempre voy a desear que lo nuestro esté lleno de amor,
-          respeto, confianza y momentos que algún día recordemos
-          sonriendo.
+          Quiero que lo nuestro esté lleno de amor, respeto, confianza
+          y momentos que algún día recordemos sonriendo. Quiero que
+          sigamos conociéndonos, aprendiendo el uno del otro y creando
+          recuerdos que sean solamente nuestros.
+        </p>
+
+        <p>
+          Gracias por ser tú, por estar aquí y por darme motivos
+          para sonreír. Espero poder hacerte tan feliz como tú me haces
+          sentir a mí.
+        </p>
+
+        <p>
+          Eres muy especial para mí, Nicole. Nunca quiero que dudes
+          de que lo que siento por ti es sincero.
         </p>
 
         <p>Con todo mi cariño, para ti, mi princesa.</p>
@@ -472,32 +550,39 @@ h1 {
 
       <div class="signature">Te amo, Nicole ♡</div>
 
+      <!-- LA MÚSICA ESTÁ AL FINAL DE LA CARTA -->
       <section class="music-section">
-        <p>Una canción para acompañar estas palabras</p>
-        <button id="musicButton" class="music-button">
-          ♫ Escuchar Contigo
-        </button>
+        <p class="music-label">Y PARA TERMINAR...</p>
 
-        <div id="youtubeWrap" class="youtube-wrap hidden">
-          <iframe
-            id="youtubePlayer"
-            title="Contigo - Los Panchos"
-            src=""
-            allow="autoplay; encrypted-media; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
-        </div>
+        <h3 class="music-title">Una canción para ti</h3>
 
-        <p style="font-size:15px;margin-top:18px;">
-          Hecho especialmente para ti, con mucho amor.
+        <p class="music-description">
+          Hay sentimientos que a veces no sabemos explicar con palabras.
+          Por eso quiero compartir esta canción contigo, mi amor. ♡
+        </p>
+
+        <a
+          class="music-button"
+          href="https://www.youtube.com/results?search_query=Contigo+Los+Panchos"
+          target="_blank"
+          rel="noopener noreferrer">
+          ♫ &nbsp; ESCUCHAR CONTIGO
+        </a>
+
+        <p class="music-note">
+          Dale al play, mi princesa. Esta canción es para ti. ♡
         </p>
       </section>
     </article>
 
-    <p class="footer">Tú y yo · Un recuerdo especial · ♡</p>
-    <div style="text-align:center;margin-top:20px;">
-      <button id="replayButton" class="replay-button">Volver a leer</button>
+    <p class="footer">
+      Hecho para Nicole · Con todo mi corazón ♡
+    </p>
+
+    <div class="replay-area">
+      <button id="replayButton" class="replay-button">
+        Volver a la portada
+      </button>
     </div>
   </section>
 </main>
@@ -537,7 +622,7 @@ function checkPassword() {
     window.scrollTo({ top: 0, behavior: "smooth" });
     startHearts();
   } else {
-    message.textContent = "Esa no es la clave, mi amor ♡";
+    message.textContent = "Prueba otra vez, mi amor ♡";
     entered = "";
     updateDots();
   }
@@ -556,34 +641,15 @@ document.querySelector('[data-action="clear"]').addEventListener("click", () => 
 });
 
 document.querySelector('[data-action="enter"]').addEventListener("click", () => {
-  if (entered.length === 4) checkPassword();
-  else message.textContent = "Introduce los cuatro números ♡";
-});
-
-/* MÚSICA: al pulsar, abre el reproductor de YouTube.
-   Cambia VIDEO_ID por el identificador de un vídeo válido de la canción. */
-const musicButton = document.getElementById("musicButton");
-const youtubeWrap = document.getElementById("youtubeWrap");
-const youtubePlayer = document.getElementById("youtubePlayer");
-
-musicButton.addEventListener("click", () => {
-  if (youtubeWrap.classList.contains("hidden")) {
-    youtubeWrap.classList.remove("hidden");
-    youtubePlayer.src =
-      "https://www.youtube.com/embed/VIDEO_ID?autoplay=1&playsinline=1";
-    musicButton.textContent = "♫ Ocultar reproductor";
+  if (entered.length === 4) {
+    checkPassword();
   } else {
-    youtubeWrap.classList.add("hidden");
-    youtubePlayer.src = "";
-    musicButton.textContent = "♫ Escuchar Contigo";
+    message.textContent = "Introduce los cuatro números ♡";
   }
 });
 
 /* VOLVER A LA PORTADA */
 document.getElementById("replayButton").addEventListener("click", () => {
-  youtubePlayer.src = "";
-  youtubeWrap.classList.add("hidden");
-  musicButton.textContent = "♫ Escuchar Contigo";
   letterScreen.classList.add("hidden");
   lockScreen.classList.remove("hidden");
   entered = "";
@@ -598,12 +664,12 @@ const ctx = canvas.getContext("2d");
 let stars = [];
 
 function resizeCanvas() {
-  canvas.width = window.innerWidth * window.devicePixelRatio;
-  canvas.height = window.innerHeight * window.devicePixelRatio;
-  ctx.setTransform(
-    window.devicePixelRatio, 0, 0,
-    window.devicePixelRatio, 0, 0
-  );
+  const ratio = window.devicePixelRatio || 1;
+
+  canvas.width = window.innerWidth * ratio;
+  canvas.height = window.innerHeight * ratio;
+
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
   stars = Array.from({ length: 100 }, () => ({
     x: Math.random() * window.innerWidth,
@@ -619,13 +685,14 @@ function drawStars() {
 
   stars.forEach(star => {
     star.alpha += star.speed;
+
     if (star.alpha > 0.9 || star.alpha < 0.15) {
       star.speed *= -1;
     }
 
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 224, 190, ${star.alpha})`;
+    ctx.fillStyle = `rgba(255,224,190,${star.alpha})`;
     ctx.fill();
   });
 
@@ -649,7 +716,9 @@ function startHearts() {
   setInterval(() => {
     const heart = document.createElement("span");
     heart.className = "floating-heart";
-    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (12 + Math.random() * 18) + "px";
     heart.style.animationDuration = (7 + Math.random() * 7) + "s";
